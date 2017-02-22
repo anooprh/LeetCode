@@ -1,4 +1,4 @@
-package a_002_AddTwoNumbers;
+package a002__Add_Two_Numbers;
 
 import org.junit.Before;
 import org.junit.Test;

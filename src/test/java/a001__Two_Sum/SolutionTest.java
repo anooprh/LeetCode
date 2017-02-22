@@ -1,4 +1,4 @@
-package a_001_TwoSum;
+package a001__Two_Sum;
 
 import org.junit.Before;
 import org.junit.Ignore;

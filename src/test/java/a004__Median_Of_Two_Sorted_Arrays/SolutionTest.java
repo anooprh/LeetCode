@@ -1,4 +1,4 @@
-package a_004_MedianOfTwoSortedArrays;
+package a004__Median_Of_Two_Sorted_Arrays;
 
 import org.junit.Before;
 import org.junit.Test;

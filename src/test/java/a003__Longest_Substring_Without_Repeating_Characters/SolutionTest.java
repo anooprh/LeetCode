@@ -1,4 +1,4 @@
-package a_003_LongestSubstringWithoutRepeatingCharacters;
+package a003__Longest_Substring_Without_Repeating_Characters;
 
 import org.junit.Before;
 import org.junit.Test;

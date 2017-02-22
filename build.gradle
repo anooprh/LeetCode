@@ -38,3 +38,15 @@ test {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
 }
+
+tasks.build.doLast {
+// Create a tree using a map
+    println "Printing the published Files *******"
+    FileTree tree = fileTree(dir: 'src/main/java', include: '**/*.md')
+    tree.each {File file ->
+        def fileName = file.toString().replace("/Readme.md", "")
+        def formattedFileName = fileName.split("/")[-1].split("__")[-1].replace("_", " ")
+        println formattedFileName
+    }
+}
+
