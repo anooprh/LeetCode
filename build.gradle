@@ -45,8 +45,8 @@ tasks.build.doLast {
     FileTree tree = fileTree(dir: 'src/main/java', include: '**/*.md')
     copy {
         from "src/main/java"
-        into "docs"
-        include "**/*.md"
+        into "docs/_posts"
+        exclude "**/*.java"
     }
 
     tree.each {File file ->
