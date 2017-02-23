@@ -1,42 +1,59 @@
 ---
-layout: default
-title: Home
+layout: page
+title: Problem List
 ---
 
-<!-- Show last 5 posts here -->
-{% for post in paginator.collections %}
-	<article>
+<section>
+    <table>
+        {% for post in site.codes %}
+        <tr>
+            <!--<td><i class="icon-clock"></i> <time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></td>-->
+            <td><a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></td>
+            <!--<td><span class="category"><i class="icon-tag"></i> {{post.categories | category_links}}</span></td>-->
+        </tr>
+        {% endfor %}
+    </table>
+</section>
 
-        <header>
-            <h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>
-            <span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>
-            <!--<span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>-->
-            <span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>
-        </header>
-	
-		<div class="entry">{{ post.excerpt }}</div>
+<!-- -&#45;&#45;-->
+<!--layout: default-->
+<!--title: Home-->
+<!-- -&#45;&#45;-->
 
-	</article>
-{% endfor %}
+<!--&lt;!&ndash; Show last 5 posts here &ndash;&gt;-->
+<!--{% for post in paginator.collections %}-->
+<!--<article>-->
+
+<!--<header>-->
+<!--<h2><a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a></h2>-->
+<!--<span class="date"><i class="icon-clock"></i><time datetime="{{post.date|date:"%F"}}">{{post.date|date:"%b %d, %Y"}}</time></span><br/>-->
+<!--&lt;!&ndash;<span class="category"><i class="icon-tag"></i> {{ post.categories | category_links }}</span><br/>&ndash;&gt;-->
+<!--<span class="author"><i class="icon-user"></i> {% if post.author %}{{post.author}}{% else %}{{site.author}}{% endif%}</span>-->
+<!--</header>-->
+<!---->
+<!--<div class="entry">{{ post.excerpt }}</div>-->
+
+<!--</article>-->
+<!--{% endfor %}-->
 
 
-<div id="paginator">
-    {% if paginator.next_page %}
-            <a href="{{site.baseurl}}/page{{paginator.next_page}}">
-            &laquo; Older Posts</a>
-    {% endif %}
+<!--<div id="paginator">-->
+<!--{% if paginator.next_page %}-->
+<!--<a href="{{site.baseurl}}/page{{paginator.next_page}}">-->
+<!--&laquo; Older Posts</a>-->
+<!--{% endif %}-->
 
-    {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-                <span class="more">
-                <a href="{{site.baseurl}}/">
-                Newer Posts &raquo; </a>
-                </span>
-        {% else %}
-                <span class="more">
-                <a href="{{site.baseurl}}/page{{paginator.previous_page}}">
-                Newer Posts &raquo; </a>
-                </span>
-        {% endif %}
-    {% endif %}
-</div>
+<!--{% if paginator.previous_page %}-->
+<!--{% if paginator.previous_page == 1 %}-->
+<!--<span class="more">-->
+<!--<a href="{{site.baseurl}}/">-->
+<!--Newer Posts &raquo; </a>-->
+<!--</span>-->
+<!--{% else %}-->
+<!--<span class="more">-->
+<!--<a href="{{site.baseurl}}/page{{paginator.previous_page}}">-->
+<!--Newer Posts &raquo; </a>-->
+<!--</span>-->
+<!--{% endif %}-->
+<!--{% endif %}-->
+<!--</div>-->
