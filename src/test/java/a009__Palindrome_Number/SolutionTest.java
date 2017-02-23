@@ -12,6 +12,7 @@ public class SolutionTest {
     String url = "https://leetcode.com/problems/palindrome-number/";
     // Accepted
 
+
     @Before
     public void setUp() {
         solution = new Solution();
