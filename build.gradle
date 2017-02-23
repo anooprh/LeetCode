@@ -40,21 +40,27 @@ test {
 }
 
 tasks.build.doLast {
-// Create a tree using a map
-    println "Copying the Readme Files *******"
-    FileTree tree = fileTree(dir: 'src/main/java', include: '**/*.md')
+    println "******* Copying the Readme Files to docs *******"
     copy {
         from "src/main/java"
-        into "docs/_posts"
+        into "docs/_codes"
         exclude "**/*.java"
     }
 
-    tree.each {File file ->
-        def fileName = file.toString().replace("/Readme.md", "")
+    def sourcebase = new File("docs/_codes")
+    sourcebase.traverse(
+            nameFilter : ~/.*\.md/,
+            preDir     : { if (it.name == '.svn' || it.name == '.idea' || it.name == '.git') return SKIP_SUBTREE }
+    ) { f ->
+        def fileName = f.toString().replace("/Readme.md", "")
         def unformattedFileName = fileName.split("/")[-1].split("__")[-1]
         def formattedFileName = unformattedFileName.replace("_", " ")
-//        Files.copy(file.path, new File("./docs/" + unformattedFileName + ".md"))
-        println formattedFileName
+        def headerText = "---\n" +
+                "layout: post\n" +
+                "title: " + formattedFileName+"\n" +
+                "---\n"
+
+        f.text = headerText + f.text
     }
 }
 
