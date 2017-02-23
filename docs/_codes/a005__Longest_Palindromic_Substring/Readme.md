@@ -2,7 +2,7 @@
 layout: post
 title: Longest Palindromic Substring
 ---
-#[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+# [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 ### Problem Statement
 
@@ -40,29 +40,29 @@ We can have odd and even length palindromes. For odd length palindromes, the mir
 For example , if have `s = babad` .
 
 we have generate an array of 
-```
+````
 odd = [{max palindrome length centered at b},
        {max palindrome length centered at a},
        {max palindrome length centered at b},
        {max palindrome length centered at a},
        {max palindrome length centered at d}]
-```
+````
 In this case it will be `odd = [1,3,3,1,1]`
 
-```
+````
 even = [{max palindrome length centered between b & a},
         {max palindrome length centered between a & b},
         {max palindrome length centered between a & b},
         {max palindrome length centered between b & a},
         {max palindrome length centered between a & d}]
-```
+````
 In this case it will be `even = [0,0,0,0]`
 
 We use helper methods `expand_odd()` and `expand_even()` to determine these values by expanding on both sides of the center. 
 
 We keep track of the the longest palindromic substring length and the midpoint point of that substring , using which we can extract out the substring from `s`
 
-```Java
+```java
     public String longestPalindrome(String s) {
         int l = s.length();
         int[] odd = new int[l];

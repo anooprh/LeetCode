@@ -1,4 +1,4 @@
-#[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+# [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
 ### Problem Statement
 
@@ -31,7 +31,7 @@ The median is (2 + 3)/2 = 2.5
 If we were not placed with the restriction that the solution should run in __O(log(m+n))__ time, this could be solved easily by the following algorithm. We find the combined sorted array and return the middle element(or average of middle elements).
 
 
-```Java
+```java
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int ptr1 = 0, ptr2 = 0, idx = 0;
         int[] combined = new int[nums1.length + nums2.length];
@@ -63,7 +63,7 @@ We introduce a helper method `find_Kth()` which returns the k'th element in two 
  
  
   
-```Java
+```java
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int total = nums1.length + nums2.length;
         if (total % 2 == 1) {

@@ -2,7 +2,7 @@
 layout: post
 title: Add Two Numbers
 ---
-#[Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
+# [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
 
 ### Problem Statement
 
@@ -46,7 +46,7 @@ However, we should be careful of few scenarios while solving this.
 
 
   
-```Java
+```java
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode prev = new ListNode(0), now, head = prev;
         int sum = 0, carry = 0;

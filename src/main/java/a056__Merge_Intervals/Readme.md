@@ -1,4 +1,4 @@
-#[Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+# [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
 
 ### Problem Statement
 
@@ -31,7 +31,7 @@ We record the starting index `s` and end ending index `e` of the first interval.
 If there is no overlap i.e `e < this_interval.start` we add an interval with previously recorded `s` and `e` and we reset `s` and `e` with the `start` and `end` of this interval. After we get out of the iteration, we have to add one more interval to the result with remaining `s` and `e` to cover the complete ranges. 
 
 
-```Java
+```java
     public List<Interval> merge(List<Interval> intervals) {
         if(intervals == null)return null;
         if(intervals.isEmpty())return new ArrayList<Interval>();

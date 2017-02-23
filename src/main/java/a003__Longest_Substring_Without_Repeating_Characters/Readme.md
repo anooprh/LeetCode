@@ -1,4 +1,4 @@
-#[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+# [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
 ### Problem Statement
 
@@ -43,7 +43,7 @@ Till end of string.
 After loop, check for the case where the end of the string is one of the answer. 
 ````
 
-```Java
+```java
     // Java Solution
     public int lengthOfLongestSubstring(String s) {
         int st = 0, ans = 0;

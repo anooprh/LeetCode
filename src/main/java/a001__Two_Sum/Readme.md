@@ -1,4 +1,4 @@
-#[Two Sum](https://leetcode.com/problems/two-sum/)
+# [Two Sum](https://leetcode.com/problems/two-sum/)
 
 ### Problem Statement
 
@@ -23,7 +23,7 @@ return [0, 1].
 
 We can solve this problem by keeping a HashMap with `key : number_in_array` and `value : index_in_array` while looping through the array. For every number in the array, we try to look for it's complementary number in the array. If we find such a number, we return the indices of these two numbers, which we have saved in the hashmap. 
   
-```Java
+```java
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; ++i) {

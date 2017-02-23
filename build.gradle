@@ -62,6 +62,8 @@ tasks.build.doLast {
                 "---\n"
 
         f.text = headerText + f.text
+//        f.text = f.text.replaceAll(Pattern.compile('(?m)^```Java$'), "{% highlight java %}")
+//        f.text = f.text.replaceAll(Pattern.compile('(?m)^```$'), "{% endhighlight %}")
     }
 }
 

@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
-        <link rel="stylesheet" href="{{site.baseurl}}/style.css" />
-        <meta name="description" content="{{site.description}}"/>
-        <meta name="author" content="{{site.author}}"/>
-        <link rel="author" href="humans.txt"/>
-        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml" />
+<head>
+    <meta charset="utf-8"/>
+    <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
+    <!--<link rel="stylesheet" href="{{site.baseurl}}/style.css"/>-->
+    <meta name="description" content="{{site.description}}"/>
+    <meta name="author" content="{{site.author}}"/>
+    <link rel="author" href="humans.txt"/>
+    <!--<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{site.baseurl}}/feed.xml"/>-->
 
-        <link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/fontello.css">
-        <link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/animation.css">
-        <!--[if IE 7]><link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/fontello-ie7.css"><![endif]-->
-    </head>
+    <!--<link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/fontello.css">-->
+    <!--<link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/animation.css">-->
+    <!--&lt;!&ndash;[if IE 7]>-->
+    <!--<link rel="stylesheet" href="{{site.baseurl}}/resources/fontello/css/fontello-ie7.css"><![endif]&ndash;&gt;-->
+    <meta name="viewport" content="width=device-width">
 
-    <body>
-        <header>
-            <h1><a href="{{site.baseurl}}/">Welcome to {{ site.name }}</a></h1>
-                <h4>{{ site.description }}</h4>
-            <hr />
-        </header>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <!--<link href="/assets/css/colors-light.css" rel="stylesheet" />-->
+    <link href="/assets/css/colors-dark.css" rel="stylesheet" />
+
+</head>
+
+<body>
+<header id="header">
+    <h1><a href="{{site.baseurl}}/"><i class="icon-sun"></i>Welcome to {{ site.name }}</a></h1>
+    <h4>{{ site.description }}</h4>
+    <hr/>
+</header>
+
+<div id="page">
+
+    <div id="sidebar">
         <nav>
-
             <ul>
-                <li><i class="icon-home"></i>   <a href="{{site.baseurl}}/home/">Home</a></li>
-                <li><i class="icon-mail"></i>   <a href="{{site.baseurl}}/contact">Contact</a></li>
+                <li><a href="{{site.baseurl}}/home/">Home</a></li>
+                <li><a href="{{site.baseurl}}/contact">Contact</a></li>
                 <!--<li><i class="icon-th"></i>     <a href="{{site.baseurl}}/archive">Archive</a></li>-->
             </ul>
         </nav>
 
-        <main>
+    </div>
 
-            {{ content }}
+    <main id="content">
 
-        </main>
+        {{ content }}
 
-        <footer>
-            <hr />
-            <p>&copy; <time>{{ site.time | date: '%Y' }}</time> {{ site.author }}</p>
-        </footer>
+    </main>
+</div>
 
-        <script src="{{site.baseurl}}/scripts.js"></script>
-    </body>
+<footer id="footer">
+    <hr/>
+    <p class="copyright">&copy;
+        <time>{{ site.time | date: '%Y' }}</time>
+        {{ site.author }}
+    </p>
+</footer>
+
+<!--<script src="{{site.baseurl}}/scripts.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/assets/js/jquery.mobilemenu.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
+    });
+
+
+
+</script>
+
+</body>
 
 </html>
